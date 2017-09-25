@@ -1,7 +1,7 @@
 <div class="wrapper">
-       <%= render 'msidebar' %> 
+       <%= render 'msidebar' %>
         <div class="main-panel">
-            <%= render 'mnav' %> 
+            <%= render 'mnav' %>
             <div class="content">
                 <div class="container-fluid">
                     <div class="row">
@@ -18,39 +18,49 @@
                                             <div class="col-md-5">
                                                 <div class="form-group label-floating">
                                                     <label class="control-label">Day</label>
-                                                    
+
 						    <%= f.text_field :day, class: "form-control" %>
                                                 </div>
                                             </div>
                                             <div class="col-md-5">
                                                 <div class="form-group label-floating">
-                                                    <label class="control-label">Meal 1</label>
+                                                    <label class="control-label">Breakfast</label>
 
 						    <%= f.text_field :meal1, class: "form-control" %>
-                                                    
+
                                                 </div>
                                             </div>
-                                           
+
                                         </div>
 					<div class="row">
                                             <div class="col-md-5">
                                                 <div class="form-group label-floating">
-                                                    <label class="control-label">Meal 2</label>
+                                                    <label class="control-label">Lunch</label>
                                                     <%= f.text_field :meal2, class: "form-control" %>
-                                                    
+
                                                 </div>
                                             </div>
 					    <div class="col-md-5">
                                                 <div class="form-group label-floating">
-                                                    <label class="control-label">Meal 3</label>
+                                                    <label class="control-label">Supper</label>
 
-						    <%= f.text_field :meal3, class: "form-control" %>
-                                                    
+						    <%= f.text_field :supper, class: "form-control" %>
+
                                                 </div>
                                             </div>
-                                            
+
                                         </div>
-                                       
+
+                                        <div class="row">
+                                                                          <div class="col-md-5">
+                                                                              <div class="form-group label-floating">
+                                                                                  <label class="control-label">Dinner</label>
+                                                                                  <%= f.text_field :meal3, class: "form-control" %>
+
+                                                                              </div>
+                                                                          </div>
+                                                                        </div>
+
                                           <%= f.submit("Update") %>
 
 
@@ -60,13 +70,13 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
             <footer class="footer">
                 <div class="container-fluid">
-                   
+
                 </div>
             </footer>
         </div>

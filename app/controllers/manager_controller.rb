@@ -273,31 +273,31 @@ class ManagerController < ApplicationController
   
   end
 
-  # def change_password
-  #   if !(session[:roll_no] || session[:password])
-  #     redirect_to(student_login_path)
-  #   end
-  #
-  #   if request.get?
-  #     @credentials = Adminn.new
-  #     @savedornot = ""
-  #   end
-  #
-  #   if request.post?
-  #     @savedornot = ""
-  #     @credentials = Adminn.new(adminn_params)
-  #     @querydb = Adminn.where(roll_no: session[:roll_no], password: @credentials.admin)
-  #     if !@querydb.empty?
-  #       @savedornot = "Successfully Changed the password"
-  #       @querydb[0].password = @credentials.password
-  #       @querydb[0].save
-  #     else
-  #       @savedornot = "You entered wrong Old password"
-  #     end
-  #   end
-  #
-  #
-  # end
+   def change_password
+     if !(session[:admin] || session[:password])
+       redirect_to(manager_login_path)
+     end
+  
+     if request.get?
+       @credentials = Adminn.new
+       @savedornot = ""
+     end
+  
+     if request.post?
+       @savedornot = ""
+       @credentials = Adminn.new(adminn_params)
+       @querydb = Adminn.where(admin: session[:admin], password: @credentials.admin)
+       if !@querydb.empty?
+         @savedornot = "Successfully Changed the password"
+         @querydb[0].password = @credentials.password
+         @querydb[0].save
+       else
+         @savedornot = "You entered wrong Old password"
+       end
+     end
+  
+  
+   end
 
 
 
@@ -336,6 +336,6 @@ private
     params.require(:mess_cut).permit(:roll_no, :name, :from, :to, :status)
   end
 
-  # def changepass_params
-  #   params.require(:adminn).permit(:admin, :password)
-  # end
+   def changepass_params
+     params.require(:adminn).permit(:admin, :password)
+   end

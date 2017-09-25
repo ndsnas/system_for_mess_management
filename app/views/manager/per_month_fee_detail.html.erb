@@ -1,0 +1,57 @@
+<div class="wrapper">
+       
+	<%= render 'msidebar' %> 
+        <div class="main-panel">
+           <%= render 'mnav' %>
+          <div class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header" data-background-color="purple">
+                                    <h4 class="title">Per Month Fee Details</h4>
+                                    <p class="category"></p>
+                                </div>
+                                <div class="card-content table-responsive">
+                                    <table class="table">
+                                        <thead class="text-primary">
+                                            <tr>
+
+      <th>roll_no</th>
+      <th>amount</th>
+      <th>status</th>
+      <th>month</th>
+    </tr>
+                                        </thead>
+                                        <tbody>
+                                          <% @bills.each do |bill| %>
+    <tr>
+
+      <td class="center"><%= bill.roll_no %></td>
+      <td class="center"><%= bill.amount %></td>
+      <td class="center"><%= 'Pending' %></td>
+      <td class="center"><%= Date::MONTHNAMES[bill.month] %></td>
+      <td class="center">
+      <%= link_to("Update", update_per_month_fee_detail_manager_path(bill.id)) %>
+      </td>
+
+
+    </tr>
+    <% end %>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+            <footer class="footer">
+                <div class="container-fluid">
+                    
+                </div>
+            </footer>
+        </div>
+    </div>
+

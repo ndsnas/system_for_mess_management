@@ -1,0 +1,58 @@
+
+<div class="wrapper">
+
+	 <%= render 'ssidebar' %>
+        <div class="main-panel">
+           <%= render 'snav' %>
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header" data-background-color="purple">
+                                    <h4 class="title">View Mess Menu</h4>
+                                    <p class="category"></p>
+                                </div>
+                                <div class="card-content">
+<% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+<% end %>
+
+
+<table class="table">
+<thead class="text-primary">
+    <tr>
+
+      <th>Day</th>
+      <th>Meal 1</th>
+      <th>Meal 2</th>
+      <th>Meal 3</th>
+    </tr>
+</thead>
+   <% @menus.each do |menu| %>
+    <tr>
+      <td><%= menu.day %></td>
+      <td class="center"><%= menu.meal1 %></td>
+      <td class="center"><%= menu.meal2 %></td>
+      <td class="center"><%= menu.meal3 %></td>
+      <td class="action">
+      </td>
+
+
+    </tr>
+    <% end %>
+  </table>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <footer class="footer">
+                <div class="container-fluid">
+
+                </div>
+            </footer>
+        </div>
+    </div>

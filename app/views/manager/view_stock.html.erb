@@ -1,0 +1,59 @@
+<div class="wrapper">
+       
+	<%= render 'msidebar' %> 
+        <div class="main-panel">
+           <%= render 'mnav' %>
+          <div class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header" data-background-color="purple">
+                                    <h4 class="title">Per Month Fee Details</h4>
+                                    <p class="category"></p>
+                                </div>
+                                <div class="card-content table-responsive">
+<% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+  <% end %>
+                                    <table class="table">
+                                        <thead class="text-primary">
+                                            <tr>
+
+      <th>Stock Id</th>
+      <th>Stock Name</th>
+      <th>Quantity</th>
+      <th>Cost Per Unit</th>
+    </tr>
+                                        </thead>
+                                        <tbody>
+                                          <% @stocks.each do |stock| %>
+    <tr>
+      <td><%= stock.stock_id %></td>
+      <td class="center"><%= stock.stock_name %></td>
+      <td class="center"><%= stock.quantity %></td>
+      <td class="center"><%= stock.cost_per_unit %></td>
+      <td>
+      <%= link_to("Update", update_stock_manager_path(stock.id)) %>
+      </td>
+    </tr>
+
+    <% end %>
+
+  </table>
+                                </div>
+                            </div>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+            <footer class="footer">
+                <div class="container-fluid">
+                    
+                </div>
+            </footer>
+        </div>
+    </div>
+
+

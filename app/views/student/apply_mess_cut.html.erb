@@ -1,0 +1,68 @@
+<div class="wrapper">
+ <%= render 'ssidebar' %> 
+        <div class="main-panel">
+             <%= render 'snav' %> 
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header" data-background-color="purple">
+                                    <h4 class="title">Apply For Mess Cut</h4>
+                                    <p class="category"></p>
+                                </div>
+                                <div class="card-content">
+<%=form_for @messcut, url: {action: "apply_mess_cut"} do |f| %>
+                                    <form>
+                                        <div class="row">
+                                            <div class="col-md-5">
+                                                <div class="form-group label-floating">
+                                                    <label class="control-label">Roll No</label>
+                                                   
+							<%= f.text_field :roll_no, class: "form-control" %>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group label-floating">
+                                                    <label class="control-label">Name</label>
+                                                   
+						    <%= f.text_field :name, class: "form-control" %>
+                                                </div>
+                                            </div>
+                                           
+                                        </div>
+					<div class="row">
+                                            <div class="col-md-5">
+                                                <div class="form-group label-floating">
+                                                    <label class="control-label">From</label>
+                                                    
+						    <%= f.text_field :from, class: "form-control" %>
+                                                </div>
+                                            </div>
+					   <div class="col-md-3">
+                                                <div class="form-group label-floating">
+                                                    <label class="control-label">To</label>
+                                                    
+						     <%= f.text_field :to, class: "form-control" %>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                 <%= f.submit("Apply") %>
+				<% end %>
+                                        <div class="clearfix"></div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <footer class="footer">
+                <div class="container-fluid">
+                    
+                </div>
+            </footer>
+        </div>
+    </div>

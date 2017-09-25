@@ -1,0 +1,66 @@
+<div class="wrapper">
+       
+	<%= render 'msidebar' %> 
+        <div class="main-panel">
+           <%= render 'mnav' %>
+          <div class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header" data-background-color="purple">
+                                    <h4 class="title">Per Month Fee Details</h4>
+                                    <p class="category"></p>
+                                </div>
+                                <div class="card-content table-responsive">
+<% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+  <% end %>
+
+
+                                    <table class="table">
+                                        <thead class="text-primary">
+                                            <tr>
+
+      <th>Day</th>
+      <th>Meal 1</th>
+      <th>Meal 2</th>
+      <th>Meal 3</th>
+    </tr>
+                                        </thead>
+                                        <tbody>
+                                         <% @menus.each do |menu| %>
+    <tr>
+      <td><%= menu.day %></td>
+      <td class="center"><%= menu.meal1 %></td>
+      <td class="center"><%= menu.meal2 %></td>
+      <td class="center"><%= menu.meal3 %></td>
+      <td class="action">
+      <%= link_to("Update", update_menu_manager_path(menu.id)) %>
+      </td>
+
+
+
+    </tr>
+    <% end %>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+            <footer class="footer">
+                <div class="container-fluid">
+                    
+                </div>
+            </footer>
+        </div>
+    </div>
+
+
+
+
+

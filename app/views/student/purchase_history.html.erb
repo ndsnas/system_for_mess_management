@@ -1,0 +1,44 @@
+
+<div class="wrapper">
+       
+	<%= render 'ssidebar' %> 
+        <div class="main-panel">
+           <%= render 'snav' %>
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header" data-background-color="purple">
+                                    <h4 class="title">Purchase History</h4>
+                                    <p class="category"></p>
+                                </div>
+                                <div class="card-content">
+					<table class="table">
+<thead class="text-primary">
+   						    <tr>
+						      <th>Item name</th>
+						      <th>Date</th>
+						    </tr>
+</thead>
+						   <% @purchased.each do |entry| %>
+						    <tr>
+						      <td><%= entry.item %></td>
+						      <td ><%= entry.date %></td>
+						    </tr>
+						    <% end %>
+						  </table>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <footer class="footer">
+                <div class="container-fluid">
+                    
+                </div>
+            </footer>
+        </div>
+    </div>

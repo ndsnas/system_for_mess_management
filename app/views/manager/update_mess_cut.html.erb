@@ -1,0 +1,42 @@
+
+
+<div class="wrapper">
+       
+	<%= render 'msidebar' %> 
+        <div class="main-panel">
+           <%= render 'mnav' %>
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header" data-background-color="purple">
+                                    <h4 class="title">Update mess cut</h4>
+                                    <p class="category"></p>
+                                </div>
+                                <div class="card-content">
+                                        <%=form_for @cut, url: {action: "update_mess_cut"} do |f| %>
+<table summary="Subject form fields">
+  <tr>
+    <th>Status</th>
+    <td><%= f.select :status, [['Approve', 'yes'], ['Deny', 'no']] %></td>
+  </tr>
+  <td><%= f.submit("Update") %></td>
+
+
+<% end %>
+
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <footer class="footer">
+                <div class="container-fluid">
+                    
+                </div>
+            </footer>
+        </div>
+    </div>

@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MessManagement</title>
+    <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="JJ7jV40sSLc26B9fouB9STssg5KP2BCtDXTYmgAJsVC5hCfBB0BQylBxzvsKyjbPqCN1H96W0MKw0uqsCSDN8A==" />
+
+    <link rel="stylesheet" media="all" href="/assets/bootstrap.min.self-511807f34f490c5d04f397a2ad4fc4a9135fcb5300f3dd5cb88f1cf678357cf3.css?body=1" data-turbolinks-track="reload" />
+<link rel="stylesheet" media="all" href="/assets/material-dashboard.self-4505b8b53a34c891b354ca384ef927c45abebdbe87225d323b3c9832f68ef323.css?body=1" data-turbolinks-track="reload" />
+<link rel="stylesheet" media="all" href="/assets/demo.self-6347f881ed5b3f4b5348d75a7e07b82ee107b525ff3da1c0392dc6aa29d095ca.css?body=1" data-turbolinks-track="reload" />
+<link rel="stylesheet" media="all" href="/assets/front.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" data-turbolinks-track="reload" />
+<link rel="stylesheet" media="all" href="/assets/manager.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" data-turbolinks-track="reload" />
+<link rel="stylesheet" media="all" href="/assets/student.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" data-turbolinks-track="reload" />
+<link rel="stylesheet" media="all" href="/assets/application.self-28442d27062e5222535535eb193cc9c04c4ce2a2c0bc352599631c5f5bc55bdc.css?body=1" data-turbolinks-track="reload" />
+    <script src="/assets/jquery-3.2.1.min.self-5c2148f394c0d0085e316066a9ec847d1d5335885c0ab4a32480ad882998ed3f.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/bootstrap.min.self-504d59678f10d79a661b6cecdce5b8c1d5bfd98e860614584c0a40399552d61f.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/material.min.self-de8d6ba66f96564b7af750dc791c0b9a1f3d70295a5000d050b6dcacf291e7f3.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/chartist.min.self-ce5373d29ade92e36eac194c3793aacf85db58736d4048ab83a958063190a8e5.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/arrive.min.self-901d2d8c4c5a3db99c872392a179d63a440a221f3dbc2058c66f42f492cc6b36.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/perfect-scrollbar.jquery.min.self-8f0dd9f6e85a8ffabc11197695c6df277379e63e76d8a8fc3bdba3a7eadd4ccc.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/bootstrap-notify.self-39c33c6760416232f7486f6e41b7f5b5c963c87e8044f169d3857488db0a8583.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/material-dashboard.self-7b0f3de9808ece8d45b2401f8d557640b9631534b72df69671ec6e933f0e2a1c.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/demo.self-aff417c9b9440d8b6bf29bef325016c36342aa78bf54d17ee05a83c7c668e9e5.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/rails-ujs.self-817d9a8cb641f7125060cb18fefada3f35339170767c4e003105f92d4c204e39.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/action_cable.self-69fddfcddf4fdef9828648f9330d6ce108b93b82b0b8d3affffc59a114853451.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/cable.self-8484513823f404ed0c0f039f75243bfdede7af7919dda65f2e66391252443ce9.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/front.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/manager.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/student.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/application.self-01f48d20b99e9587448da523ff75d86db93a42bb2f278510963929fd9dbd9a5d.js?body=1" data-turbolinks-track="reload"></script>
+	 <meta charset="utf-8" />
+    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png" />
+    <link rel="icon" type="image/png" href="../assets/img/favicon.png" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+   
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+    
+    <!--     Fonts and icons     -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300|Material+Icons' rel='stylesheet' type='text/css'>
+  </head>
+
+  <body>
+    
+<div class="wrapper">
+ 
+        <div class="main-panel">
+            <nav class="navbar navbar-transparent navbar-absolute">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                           
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#"> Mess Management System</a>
+                    </div>
+                    
+                </div>
+	    </nav>
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header" data-background-color="purple">
+                                    <h4 class="title">Login</h4>
+                                    <p class="category"></p>
+                                </div>
+                                <div class="card-content">
+<form class="new_feedback" id="new_feedback" action="/student/feedback" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="nJlXmq7HK8aTJwArAJ1yeGZyA8n4+bPb9umIy0yKQhkwzh4lqEzs1fnHaNOaaytMSgogM4hiKmb2Il4P2SBqkQ==" />
+                                    <form>
+                                        <%= link_to("Student login",student_login_path)%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<%= link_to("Manager login",manager_login_path)%>
+					<!-- <li><a href="student_login_path">student login</a></li> -->
+					   
+                                        </div>
+                                 
+</form>                                        <div class="clearfix"></div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <footer class="footer">
+                <div class="container-fluid">
+                    
+                </div>
+            </footer>
+        </div>
+    </div>
+
+  </body>
+</html>

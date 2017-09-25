@@ -1,0 +1,74 @@
+
+
+<div class="wrapper">
+       <%= render 'msidebar' %> 
+        <div class="main-panel">
+            <%= render 'mnav' %> 
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="card">
+                                <div class="card-header" data-background-color="purple">
+                                    <h4 class="title">Edit Profile</h4>
+                                    <p class="category">Complete your profile</p>
+                                </div>
+                                <div class="card-content">
+<%=form_for @stock, url: {action: "update_stock"} do |f| %>
+                                    <form>
+                                        <div class="row">
+                                            <div class="col-md-5">
+                                                <div class="form-group label-floating">
+                                                    <label class="control-label">Stock Id</label>
+                                                    <%= f.text_field(:stock_id) %>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group label-floating">
+                                                    <label class="control-label">Name</label>
+                                                    <%= f.text_field(:stock_name) %>
+                                                </div>
+                                            </div>
+                                           
+                                        </div>
+					<div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group label-floating">
+                                                    <label class="control-label">Quantity</label>
+                                                    <%= f.text_field(:quantity) %>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group label-floating">
+                                                    <label class="control-label">Cost Per Unit</label>
+                                                    
+						    <%= f.text_field(:cost_per_unit) %>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                        
+                                        <%= f.submit("Update") %>
+
+
+<% end %>
+                                        <div class="clearfix"></div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <footer class="footer">
+                <div class="container-fluid">
+                   
+                </div>
+            </footer>
+        </div>
+    </div>
+</div>

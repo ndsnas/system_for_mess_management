@@ -1,0 +1,52 @@
+
+
+<div class="wrapper">
+       
+	<%= render 'msidebar' %> 
+        <div class="main-panel">
+           <%= render 'mnav' %>
+          <div class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header" data-background-color="purple">
+                                    <h4 class="title">Feed Back Details</h4>
+                                    <p class="category"></p>
+                                </div>
+                                <div class="card-content table-responsive">
+                                    <table class="table">
+                                        <thead class="text-primary">
+                                             <th>Roll no</th>
+      <th>Name</th>
+      <th>feedback</th>
+      <th>status</th>
+                                        </thead>
+                                        <tbody>
+                                        <% @feedbacks.each do |feedback| %>
+    <tr>
+      <td><%= feedback.s_id %></td>
+      <td class="center"><%= feedback.name %></td>
+      <td class="center"><%= feedback.feedback %></td>
+      <td class="center"><%= feedback.status %></td>
+
+
+    </tr>
+    <% end %>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+            <footer class="footer">
+                <div class="container-fluid">
+                    
+                </div>
+            </footer>
+        </div>
+    </div>
+

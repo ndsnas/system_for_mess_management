@@ -1,0 +1,2 @@
+class MessCut < ApplicationRecord
+end

@@ -1,7 +1,8 @@
 
+
 <div class="wrapper">
-       
-	<%= render 'ssidebar' %> 
+
+	<%= render 'ssidebar' %>
         <div class="main-panel">
            <%= render 'snav' %>
             <div class="content">
@@ -19,25 +20,33 @@
    						    <tr>
 						      <th>Item name</th>
 						      <th>Date</th>
+                  <th>price</th>
 						    </tr>
 </thead>
+
 						   <% @purchased.each do |entry| %>
 						    <tr>
 						      <td><%= entry.item %></td>
 						      <td ><%= entry.date %></td>
+                  <td><%=@co[@i] %></td>
+                  <% @i=@i+1 %>
 						    </tr>
-						    <% end %>
+                <% end %>
+
 						  </table>
+
+            <center>  <h2>Total = Rs. <%= @purchase_total_cost1 %></h2></center>
+
                                 </div>
                             </div>
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
             <footer class="footer">
                 <div class="container-fluid">
-                    
+
                 </div>
             </footer>
         </div>

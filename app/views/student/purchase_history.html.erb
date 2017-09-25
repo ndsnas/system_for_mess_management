@@ -28,14 +28,18 @@
 						    <tr>
 						      <td><%= entry.item %></td>
 						      <td ><%= entry.date %></td>
-                  <td><%=@co[@i] %></td>
-                  <% @i=@i+1 %>
+                             <td>Rs. <%= Item.where(item_name: entry.item).pluck(:price)[0]%></td>
 						    </tr>
                 <% end %>
+                <tr>
+                    <td>Total </td>
+                    <td></td>
+                    <td>Rs. <%= @purchase_total_cost1 %></td>
+                </tr>
 
 						  </table>
 
-            <center>  <h2>Total = Rs. <%= @purchase_total_cost1 %></h2></center>
+            
 
                                 </div>
                             </div>

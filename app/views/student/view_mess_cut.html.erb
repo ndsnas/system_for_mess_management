@@ -1,57 +1,58 @@
+
 <div class="wrapper">
-       
-	<%= render 'msidebar' %> 
+
+	 <%= render 'ssidebar' %>
         <div class="main-panel">
-           <%= render 'mnav' %>
-          <div class="content">
+           <%= render 'snav' %>
+            <div class="content">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="card">
                                 <div class="card-header" data-background-color="purple">
-                                    <h4 class="title">Mess Cut Details</h4>
+                                    <h4 class="title">View Mess Menu</h4>
                                     <p class="category"></p>
                                 </div>
-                                <div class="card-content table-responsive">
-                                <% if flash[:notice] %>
+                                <div class="card-content">
+<% if flash[:notice] %>
     <div class="notice"><%= flash[:notice] %></div>
   <% end %>
-                                    <table class="table">
-                                        <thead class="text-primary">
-                                            <th>Roll_no</th>
+
+<table class="table">
+<thead class="text-primary">
+    <tr>
+
+      <th>Roll_no</th>
       <th>Name</th>
       <th>From</th>
       <th>To</th>
       <th>Status</th>
-      <th>Action</th>	
-                                        </thead>
-                                        <tbody>
-                                            <% @cuts.each do |cut| %>
+    </tr>
+</thead>
+   <% @cuts.each do |cut| %>
     <tr>
       <td><%= cut.roll_no %></td>
       <td class="center"><%= cut.name %></td>
       <td class="center"><%= cut.from %></td>
       <td class="center"><%= cut.to %></td>
       <td class="center"><%= cut.status %></td>
-      <td class="action">
-      <%= link_to("Update", update_mess_cut_manager_path(cut.id)) %>
       </td>
+
 
     </tr>
     <% end %>
-                                        </tbody>
-                                    </table>
+  </table>
                                 </div>
                             </div>
                         </div>
-                       
+
                     </div>
                 </div>
             </div>
             <footer class="footer">
                 <div class="container-fluid">
-                    
+
                 </div>
             </footer>
         </div>
-</div>
+    </div>

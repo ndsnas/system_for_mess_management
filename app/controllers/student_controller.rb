@@ -86,7 +86,18 @@ class StudentController < ApplicationController
 # Assuming base price = RS 80 
     @total = @chargeable_days * 80 + @purchase_total_cost
   end
+	def view_mess_cut
+	    if ((session[:v] != 1) || !(session[:roll_no] || session[:password]))
+	      redirect_to(student_login_path)
+	    end
+	    if request.get?
+	      @cuts = MessCut.all
+	    end
+	    if request.post?
+	      #@cut = MessCut.find(params[:id])
+	    end
 
+	  end
   def apply_mess_cut
     if !(session[:roll_no] || session[:password])
       redirect_to(student_login_path)  

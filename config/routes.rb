@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   post 'student/change_password'
   get 'student/feedback'
   post 'student/feedback'
+  get 'student/view_mess_cut'
 
   #resources :manager
   get 'manager/change_password'

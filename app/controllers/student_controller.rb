@@ -137,6 +137,19 @@ class StudentController < ApplicationController
 # Replace this hardcoded value with the session variables rollnumber and name
     # @purchased = Extra.where(roll_no: 123).group('item').count('item')
     @purchased = Extra.where(roll_no: session[:roll_no])
+	  
+	@i=0
+    @pur = Extra.where(roll_no: session[:roll_no]).pluck(:item)
+    #@pur.each do |a|
+      @co = Item.where(item_name: @pur).pluck(:price)
+    #end
+
+    @purchased1 = Extra.where(roll_no: session[:roll_no]).group('item').count('item')
+    @purchase_total_cost1 = 0
+    @purchased1.each do |key, value|
+      @cost1 = Item.where(item_name: key).pluck(:price)[0]
+      @purchase_total_cost1 += @cost1 * value
+    end
 
   end
 

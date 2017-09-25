@@ -23,10 +23,10 @@
                                             <tr>
 
       <th>Day</th>
-      <th>Meal 1</th>
-      <th>Meal 2</th>
-      <th>Meal 3</th>
-	<th>Action</th>
+      <th>Breakfast</th>
+      <th>Lunch</th>
+      <th>Supper</th>
+      <th>Dinner</th>
     </tr>
                                         </thead>
                                         <tbody>
@@ -35,6 +35,7 @@
       <td><%= menu.day %></td>
       <td class="center"><%= menu.meal1 %></td>
       <td class="center"><%= menu.meal2 %></td>
+      <td class="center"><%= menu.supper %></td>
       <td class="center"><%= menu.meal3 %></td>
       <td class="action">
       <%= link_to("Update", update_menu_manager_path(menu.id)) %>

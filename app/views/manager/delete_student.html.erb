@@ -19,17 +19,17 @@
 
 <%=form_for @student, url: {action: "delete_student"} do |f| %>
                                     <form>
-                                        <div class="row">
+                                        
+					<div class="row">
                                             <div class="col-md-5">
                                                 <div class="form-group label-floating">
                                                     <label class="control-label">Roll No</label>
-                                                    <%= f.text_field(:roll_no) %>
+
+						    <%= f.text_field :roll_no, class: "form-control" %>
+                                                    
                                                 </div>
                                             </div>
-                                            
-                                           
                                         </div>
-					
                                         
                                         
                                         <%= f.submit("Delete Student") %>

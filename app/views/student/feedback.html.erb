@@ -1,32 +1,65 @@
 
+     
 <div class="wrapper">
- <%= render 'ssidebar' %>
+ <%= render 'ssidebar' %> 
         <div class="main-panel">
-            <%= render 'snav' %>
+             <%= render 'snav' %> 
             <div class="content">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="card">
                                 <div class="card-header" data-background-color="purple">
-                                    <h4 class="title">Feedback</h4>
+                                    <h4 class="title">Add Feedback</h4>
                                     <p class="category"></p>
                                 </div>
                                 <div class="card-content">
 <%=form_for @feedback, url: {action: "feedback"} do |f| %>
-<table summary="Subject form fields">
-  <tr>
-    <th style="text-align: left;">s_id</th>
-    <td><%= f.text_field(:s_id) %></td>
-  </tr>
-  <tr>
-    <th style="text-align: left;">name</th>
-    <td><%= f.text_field(:name) %></td>
-  </tr>
-  <tr>
-    <th style="text-align: left;">feedback</th>
-    <td><%= f.text_field(:feedback) %></td>
-  </tr>
-</table>
-      <%= f.submit("Add Student") %>
+                                    <form>
+                                        <div class="row">
+                                            <div class="col-md-5">
+                                                <div class="form-group label-floating">
+                                                    <label class="control-label">Student Id</label>
+                                                   
+							<%= f.text_field :s_id, class: "form-control" %>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group label-floating">
+                                                    <label class="control-label">Name</label>
+                                                   
+						    <%= f.text_field :name, class: "form-control" %>
+                                                </div>
+                                            </div>
+                                           
+                                        </div>
+					<div class="row">
+                                            <div class="col-md-5">
+                                                <div class="form-group label-floating">
+                                                    <label class="control-label">feedback</label>
+                                                    
+						    <%= f.text_field :feedback, class: "form-control" %>
+                                                </div>
+                                            </div>
+					   
+                                            
+                                        </div>
+                                 <%= f.submit("Add") %>
 <% end %>
+				
+                                        <div class="clearfix"></div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <footer class="footer">
+                <div class="container-fluid">
+                    
+                </div>
+            </footer>
+        </div>
+    </div>

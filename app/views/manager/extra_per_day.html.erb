@@ -5,11 +5,11 @@
             <div class="content">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-md-8">
+                        <div class="col-md-12">
                             <div class="card">
                                 <div class="card-header" data-background-color="purple">
-                                    <h4 class="title">Edit Profile</h4>
-                                    <p class="category">Complete your profile</p>
+                                    <h4 class="title">Extras Details</h4>
+                                    <p class="category"></p>
                                 </div>
                                 <div class="card-content">
 <% if flash[:notice] %>
@@ -20,29 +20,34 @@
                                     <form>
                                         <div class="row">
                                             
-                                            <div class="col-md-3">
+                                            <div class="col-md-5">
                                                 <div class="form-group label-floating">
                                                     <label class="control-label">Roll no</label>
-                                                    <%= f.text_field(:roll_no) %>
+                                                    
+ 						   <%= f.text_field :roll_no, class: "form-control" %>
                                                 </div>
                                             </div>
                                            
                                         </div>
 					<div class="row">
-                                            <div class="col-md-4">
+                                            <div class="col-md-5">
                                                 <div class="form-group label-floating">
                                                     <label class="control-label">Item id</label>
-                                                    <%= f.text_field(:item) %>
+
+ 						   <%= f.text_field :item, class: "form-control" %>
+                                                    
                                                 </div>
                                             </div>
                                             
                                         </div>
                                         <div class="row">
-                                            <div class="col-md-6">
+                                            <div class="col-md-5">
                                                 <div class="form-group label-floating">
                                                     <label class="control-label">Date</label>
+
+ 						   <%= f.text_field :date, class: "form-control" %>
                                                     
-						    <%= f.text_field(:date) %>
+						    
                                                 </div>
                                             </div>
                                             

@@ -10,7 +10,7 @@
                         <div class="col-md-12">
                             <div class="card">
                                 <div class="card-header" data-background-color="purple">
-                                    <h4 class="title">View Mess Menu</h4>
+                                    <h4 class="title">Mess Menu</h4>
                                     <p class="category"></p>
                                 </div>
                                 <div class="card-content">
@@ -51,6 +51,52 @@
                     </div>
                 </div>
             </div>
+
+<div class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header" data-background-color="purple">
+                                    <h4 class="title">Extra's Menu</h4>
+                                    <p class="category"></p>
+                                </div>
+                                <div class="card-content">
+<% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+<% end %>
+
+
+<table class="table">
+<thead class="text-primary">
+    <tr>
+
+      <th>Item</th>
+      <th>Cost</th>
+
+    </tr>
+</thead>
+   <% @extrasmenu.each do |menu| %>
+    <tr>
+      <td class="center"><%= menu.item_name %></td>
+      <td class="center"><%= menu.price %></td>
+      </td>
+
+
+    </tr>
+    <% end %>
+  </table>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
             <footer class="footer">
                 <div class="container-fluid">
 

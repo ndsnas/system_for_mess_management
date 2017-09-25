@@ -51,6 +51,7 @@ class StudentController < ApplicationController
       redirect_to(student_login_path)  
     end
     @menus = Menu.all
+    @extrasmenu = Item.all
   end
 
   def view_bill

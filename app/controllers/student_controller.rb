@@ -69,8 +69,10 @@ class StudentController < ApplicationController
 # Calculate the number of mess cut days, that is the number of days for which the mess cut were accepted
     @mess_cut_days = 0
     @messcut_from_to = MessCut.where(roll_no: session[:roll_no], status: "yes").order(:id).pluck(:from, :to)
-    @messcut_from_to.each do |data|
-      @mess_cut_days += data[1] - data[0] + 1
+    if !@messcut_from_to.empty?
+      @messcut_from_to.each do |data|
+        @mess_cut_days += data[1] - data[0] + 1
+      end
     end
 
 # No of days to charge for
@@ -79,9 +81,11 @@ class StudentController < ApplicationController
 # Calculate extra's cost for that student
     @purchased = Extra.where(roll_no: session[:roll_no]).group('item').count('item')
     @purchase_total_cost = 0
-    @purchased.each do |key, value|
-      @cost = Item.where(item_name: key).pluck(:price)[0]
-      @purchase_total_cost += @cost * value
+    if !@purchased.empty?
+      @purchased.each do |key, value|
+        @cost = Item.where(item_name: key).pluck(:price)[0]
+        @purchase_total_cost += @cost * value
+      end
     end
 # Calculating the total bill
 # Assuming base price = RS 80 
@@ -138,9 +142,11 @@ class StudentController < ApplicationController
 
     @purchased1 = Extra.where(roll_no: session[:roll_no]).group('item').count('item')
     @purchase_total_cost1 = 0
-    @purchased1.each do |key, value|
-      @cost1 = Item.where(item_name: key).pluck(:price)[0]
-      @purchase_total_cost1 += @cost1 * value
+    if !@purchased1.empty?
+      @purchased1.each do |key, value|
+        @cost1 = Item.where(item_name: key).pluck(:price)[0]
+        @purchase_total_cost1 += @cost1 * value
+      end
     end
 
   end

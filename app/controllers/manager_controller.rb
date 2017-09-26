@@ -56,10 +56,17 @@ class ManagerController < ApplicationController
     end
     if request.post?
       @student = Student.new(student_params)
-      if @student.save
-        flash[:notice] = "Successfully created..."
-        redirect_to(manager_add_student_path)
-      end
+
+      if ((@student.roll_no) && (@student.name) && (@student.phone) && (@student.email) && (@student.password))
+        if @student.save
+          flash[:notice] = "Successfully created..."
+          redirect_to(manager_add_student_path)
+        end
+
+      else
+        flash[:notice] = "One or more fields empty!!!"
+
+    end
    end
   end
 

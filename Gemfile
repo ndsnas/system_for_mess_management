@@ -1,56 +1,207 @@
-source 'https://rubygems.org'
+GEM
+  remote: https://rubygems.org/
+  specs:
+    actioncable (5.1.4)
+      actionpack (= 5.1.4)
+      nio4r (~> 2.0)
+      websocket-driver (~> 0.6.1)
+    actionmailer (5.1.4)
+      actionpack (= 5.1.4)
+      actionview (= 5.1.4)
+      activejob (= 5.1.4)
+      mail (~> 2.5, >= 2.5.4)
+      rails-dom-testing (~> 2.0)
+    actionpack (5.1.4)
+      actionview (= 5.1.4)
+      activesupport (= 5.1.4)
+      rack (~> 2.0)
+      rack-test (>= 0.6.3)
+      rails-dom-testing (~> 2.0)
+      rails-html-sanitizer (~> 1.0, >= 1.0.2)
+    actionview (5.1.4)
+      activesupport (= 5.1.4)
+      builder (~> 3.1)
+      erubi (~> 1.4)
+      rails-dom-testing (~> 2.0)
+      rails-html-sanitizer (~> 1.0, >= 1.0.3)
+    activejob (5.1.4)
+      activesupport (= 5.1.4)
+      globalid (>= 0.3.6)
+    activemodel (5.1.4)
+      activesupport (= 5.1.4)
+    activerecord (5.1.4)
+      activemodel (= 5.1.4)
+      activesupport (= 5.1.4)
+      arel (~> 8.0)
+    activesupport (5.1.4)
+      concurrent-ruby (~> 1.0, >= 1.0.2)
+      i18n (~> 0.7)
+      minitest (~> 5.1)
+      tzinfo (~> 1.1)
+    addressable (2.5.2)
+      public_suffix (>= 2.0.2, < 4.0)
+    arel (8.0.0)
+    attr_encrypted (3.0.3)
+      encryptor (~> 3.0.0)
+    backup (3.4.0)
+      open4 (~> 1.3.0)
+      thor (>= 0.15.4, < 2)
+    bcrypt (3.1.11)
+    bindex (0.5.0)
+    builder (3.2.3)
+    byebug (9.1.0)
+    capybara (2.15.1)
+      addressable
+      mini_mime (>= 0.1.3)
+      nokogiri (>= 1.3.3)
+      rack (>= 1.0.0)
+      rack-test (>= 0.5.4)
+      xpath (~> 2.0)
+    childprocess (0.7.1)
+      ffi (~> 1.0, >= 1.0.11)
+    coffee-rails (4.2.2)
+      coffee-script (>= 2.2.0)
+      railties (>= 4.0.0)
+    coffee-script (2.4.1)
+      coffee-script-source
+      execjs
+    coffee-script-source (1.12.2)
+    concurrent-ruby (1.0.5)
+    encryptor (3.0.0)
+    erubi (1.6.1)
+    execjs (2.7.0)
+    ffi (1.9.18)
+    globalid (0.4.0)
+      activesupport (>= 4.2.0)
+    i18n (0.8.6)
+    jbuilder (2.7.0)
+      activesupport (>= 4.2.0)
+      multi_json (>= 1.2)
+    listen (3.1.5)
+      rb-fsevent (~> 0.9, >= 0.9.4)
+      rb-inotify (~> 0.9, >= 0.9.7)
+      ruby_dep (~> 1.2)
+    loofah (2.0.3)
+      nokogiri (>= 1.5.9)
+    mail (2.6.6)
+      mime-types (>= 1.16, < 4)
+    method_source (0.8.2)
+    mime-types (3.1)
+      mime-types-data (~> 3.2015)
+    mime-types-data (3.2016.0521)
+    mini_mime (0.1.4)
+    mini_portile2 (2.2.0)
+    minitest (5.10.3)
+    multi_json (1.12.2)
+    mysql2 (0.4.9)
+    nio4r (2.1.0)
+    nokogiri (1.8.0)
+      mini_portile2 (~> 2.2.0)
+    open4 (1.3.4)
+    public_suffix (3.0.0)
+    puma (3.10.0)
+    rack (2.0.3)
+    rack-test (0.7.0)
+      rack (>= 1.0, < 3)
+    rails (5.1.4)
+      actioncable (= 5.1.4)
+      actionmailer (= 5.1.4)
+      actionpack (= 5.1.4)
+      actionview (= 5.1.4)
+      activejob (= 5.1.4)
+      activemodel (= 5.1.4)
+      activerecord (= 5.1.4)
+      activesupport (= 5.1.4)
+      bundler (>= 1.3.0)
+      railties (= 5.1.4)
+      sprockets-rails (>= 2.0.0)
+    rails-dom-testing (2.0.3)
+      activesupport (>= 4.2.0)
+      nokogiri (>= 1.6)
+    rails-html-sanitizer (1.0.3)
+      loofah (~> 2.0)
+    railties (5.1.4)
+      actionpack (= 5.1.4)
+      activesupport (= 5.1.4)
+      method_source
+      rake (>= 0.8.7)
+      thor (>= 0.18.1, < 2.0)
+    rake (12.1.0)
+    rb-fsevent (0.10.2)
+    rb-inotify (0.9.10)
+      ffi (>= 0.5.0, < 2)
+    ruby_dep (1.5.0)
+    rubyzip (1.2.1)
+    sass (3.5.1)
+      sass-listen (~> 4.0.0)
+    sass-listen (4.0.0)
+      rb-fsevent (~> 0.9, >= 0.9.4)
+      rb-inotify (~> 0.9, >= 0.9.7)
+    sass-rails (5.0.6)
+      railties (>= 4.0.0, < 6)
+      sass (~> 3.1)
+      sprockets (>= 2.8, < 4.0)
+      sprockets-rails (>= 2.0, < 4.0)
+      tilt (>= 1.1, < 3)
+    selenium-webdriver (3.5.2)
+      childprocess (~> 0.5)
+      rubyzip (~> 1.0)
+    spring (2.0.2)
+      activesupport (>= 4.2)
+    spring-watcher-listen (2.0.1)
+      listen (>= 2.7, < 4.0)
+      spring (>= 1.2, < 3.0)
+    sprockets (3.7.1)
+      concurrent-ruby (~> 1.0)
+      rack (> 1, < 3)
+    sprockets-rails (3.2.1)
+      actionpack (>= 4.0)
+      activesupport (>= 4.0)
+      sprockets (>= 3.0.0)
+    thor (0.20.0)
+    thread_safe (0.3.6)
+    tilt (2.0.8)
+    turbolinks (5.0.1)
+      turbolinks-source (~> 5)
+    turbolinks-source (5.0.3)
+    tzinfo (1.2.3)
+      thread_safe (~> 0.1)
+    uglifier (3.2.0)
+      execjs (>= 0.3.0, < 3)
+    web-console (3.5.1)
+      actionview (>= 5.0)
+      activemodel (>= 5.0)
+      bindex (>= 0.4.0)
+      railties (>= 5.0)
+    websocket-driver (0.6.5)
+      websocket-extensions (>= 0.1.0)
+    websocket-extensions (0.1.2)
+    xpath (2.1.0)
+      nokogiri (~> 1.3)
 
-git_source(:github) do |repo_name|
-  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
-  "https://github.com/#{repo_name}.git"
-end
+PLATFORMS
+  ruby
 
-gem "attr_encrypted", "~> 3.0.0"
+DEPENDENCIES
+  attr_encrypted (~> 3.0.0)
+  backup
+  bcrypt (~> 3.1.7)
+  byebug
+  capybara (~> 2.13)
+  coffee-rails (~> 4.2)
+  jbuilder (~> 2.5)
+  listen (>= 3.0.5, < 3.2)
+  mysql2 (>= 0.3.18, < 0.5)
+  puma (~> 3.7)
+  rails (~> 5.1.4)
+  sass-rails (~> 5.0)
+  selenium-webdriver
+  spring
+  spring-watcher-listen (~> 2.0.0)
+  turbolinks (~> 5)
+  tzinfo-data
+  uglifier (>= 1.3.0)
+  web-console (>= 3.3.0)
 
-gem 'backup'
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.4'
-# Use mysql as the database for Active Record
-gem 'mysql2', '>= 0.3.18', '< 0.5'
-# Use Puma as the app server
-gem 'puma', '~> 3.7'
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
-# Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
-# See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
-
-# Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.2'
-# Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-gem 'turbolinks', '~> 5'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.5'
-# Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 3.0'
-# Use ActiveModel has_secure_password
- gem 'bcrypt', '~> 3.1.7'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-
-group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '~> 2.13'
-  gem 'selenium-webdriver'
-end
-
-group :development do
-  # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
-  gem 'web-console', '>= 3.3.0'
-  gem 'listen', '>= 3.0.5', '< 3.2'
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.0'
-end
-
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+BUNDLED WITH
+   1.16.0.pre.2

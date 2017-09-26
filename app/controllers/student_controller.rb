@@ -111,9 +111,14 @@ class StudentController < ApplicationController
     
     if request.post?
       @messcut = MessCut.new(messcut_params)
+    if ((@messcut.roll_no) && (@messcut.name) && (@messcut.from) && (@messcut.to))
       if @messcut.save
         flash[:notice] = "Successfully submitted..."
       end
+    else
+      flash[:notice] = "One` or more fields empty!!!"
+    end
+
     end
   end
 

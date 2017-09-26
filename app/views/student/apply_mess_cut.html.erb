@@ -12,6 +12,9 @@
                                     <p class="category"></p>
                                 </div>
                                 <div class="card-content">
+                                <% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+  <% end %>
 <%=form_for @messcut, url: {action: "apply_mess_cut"} do |f| %>
                                     <form>
                                         <div class="row">

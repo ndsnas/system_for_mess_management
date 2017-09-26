@@ -296,7 +296,7 @@ def add_item
     end
   
   
-    redirect_to(manager_login_path)
+    redirect_to(manager_per_month_fee_detail_path)
   
   end
 

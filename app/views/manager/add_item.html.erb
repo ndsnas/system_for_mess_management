@@ -1,0 +1,70 @@
+<div class="wrapper">
+       <%= render 'msidebar' %> 
+        <div class="main-panel">
+            <%= render 'mnav' %> 
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header" data-background-color="purple">
+                                    <h4 class="title">Add Item</h4>
+                                    <p class="category"></p>
+                                </div>
+                                <div class="card-content">
+<% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+  <% end %>
+
+<%=form_for @items, url: {action: "add_item"} do |f| %>
+                                    <form>
+                                        <div class="row">
+						<div class="col-md-5">
+                                                 <div class="form-group label-floating">
+                                                    <label class="control-label">Item ID</label>
+
+						    <%= f.text_field :item_id, class: "form-control" %>	
+                                                    
+                                                </div>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <div class="form-group label-floating">
+                                                    <label class="control-label">Item Name</label>
+						    <%= f.text_field :item_name, class: "form-control" %>	
+                                                   
+                                                </div>
+                                            </div>
+                                           
+                                           
+                                        </div>
+					
+					<div class="row">
+                                            <div class="col-md-5">
+                                                <div class="form-group label-floating">
+                                                    <label class="control-label">Amount</label>
+						    <%= f.text_field :price, class: "form-control" %>
+
+                                                   
+                                                </div>
+                                            </div>
+                                            
+                                        
+                                        <%= f.submit("Add Item") %>
+  					<% end %>
+                                        <div class="clearfix"></div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <footer class="footer">
+                <div class="container-fluid">
+                   
+                </div>
+            </footer>
+        </div>
+    </div>
+</div>

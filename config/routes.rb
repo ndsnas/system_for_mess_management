@@ -29,6 +29,8 @@ Rails.application.routes.draw do
   post 'manager/change_password'
   get 'manager/dashboard'
   get 'manager/add_student'
+  post 'manager/add_item'
+  get 'manager/add_item'
   post 'manager/add_student'
   get 'manager/delete_student'
   post 'manager/delete_student'

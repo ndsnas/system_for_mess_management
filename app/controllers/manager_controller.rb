@@ -83,6 +83,22 @@ class ManagerController < ApplicationController
     end
   end
 
+def add_item
+
+    if ((session[:v] != 1) || !(session[:admin] || session[:password]))
+      redirect_to(manager_login_path)
+    end
+    if request.get?
+      @items = Item.new
+    end
+    if request.post?
+      @items = Item.new(items_params)
+      if @items.save
+        flash[:notice] = "Successfully created..."
+        redirect_to(manager_add_item_path)
+      end
+   end
+  end 
 
   def view_menu
     if ((session[:v] != 1) || !(session[:admin] || session[:password]))
@@ -313,6 +329,11 @@ private
   def student_params
 
     params.require(:student).permit(:name, :phone, :roll_no, :email, :password)
+
+  end
+  def items_params
+
+    params.require(:item).permit(:item_id, :item_name, :price)
 
   end
 

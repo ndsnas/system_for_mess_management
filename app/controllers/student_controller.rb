@@ -43,7 +43,9 @@ class StudentController < ApplicationController
   def dashboard
     if !(session[:roll_no] || session[:password])
       redirect_to(student_login_path)
+
     end
+    @named = Student.where(roll_no: session[:roll_no]).pluck(:name)
   end
 
   def view_menu
@@ -107,11 +109,12 @@ class StudentController < ApplicationController
 
     if request.get?
       @messcut = MessCut.new
+      @name = Student.where(roll_no: session[:roll_no]).pluck(:name)
     end
 
     if request.post?
       @messcut = MessCut.new(messcut_params)
-    if ((@messcut.roll_no) && (@messcut.name) && (@messcut.from) && (@messcut.to))
+      if ((@messcut.roll_no) && (@messcut.name) && (@messcut.from) && (@messcut.to))
       if @messcut.save
         flash[:notice] = "Successfully submitted..."
         redirect_to(student_apply_mess_cut_path)
@@ -190,6 +193,7 @@ class StudentController < ApplicationController
 
     if request.get?
       @feedback = Feedback.new
+      @name1 = Student.where(roll_no: session[:roll_no]).pluck(:name)
     end
 
     if request.post?

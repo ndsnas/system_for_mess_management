@@ -1,8 +1,8 @@
 
 
 <div class="wrapper">
-       
-	<%= render 'msidebar' %> 
+
+	<%= render 'msidebar' %>
         <div class="main-panel">
            <%= render 'mnav' %>
           <div class="content">
@@ -20,7 +20,7 @@
                                              <th>Roll no</th>
       <th>Name</th>
       <th>feedback</th>
-      <th>status</th>
+      
                                         </thead>
                                         <tbody>
                                         <% @feedbacks.each do |feedback| %>
@@ -28,7 +28,7 @@
       <td><%= feedback.s_id %></td>
       <td class="center"><%= feedback.name %></td>
       <td class="center"><%= feedback.feedback %></td>
-      <td class="center"><%= feedback.status %></td>
+
 
 
     </tr>
@@ -38,15 +38,14 @@
                                 </div>
                             </div>
                         </div>
-                       
+
                     </div>
                 </div>
             </div>
             <footer class="footer">
                 <div class="container-fluid">
-                    
+
                 </div>
             </footer>
         </div>
     </div>
-

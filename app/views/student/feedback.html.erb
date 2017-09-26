@@ -1,9 +1,8 @@
 
-     
 <div class="wrapper">
- <%= render 'ssidebar' %> 
+ <%= render 'ssidebar' %>
         <div class="main-panel">
-             <%= render 'snav' %> 
+             <%= render 'snav' %>
             <div class="content">
                 <div class="container-fluid">
                     <div class="row">
@@ -23,45 +22,45 @@
                                             <div class="col-md-5">
                                                 <div class="form-group label-floating">
                                                     <label class="control-label">Student Id</label>
-                                                   
-							<%= f.text_field :s_id, class: "form-control" %>
+
+							<%= f.text_field :s_id, :value => session[:roll_no], :readonly => true, class: "form-control" %>
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="form-group label-floating">
                                                     <label class="control-label">Name</label>
-                                                   
-						    <%= f.text_field :name, class: "form-control" %>
+
+						    <%= f.text_field :name, :value => @name1, :readonly => true, class: "form-control" %>
                                                 </div>
                                             </div>
-                                           
+
                                         </div>
 					<div class="row">
                                             <div class="col-md-5">
                                                 <div class="form-group label-floating">
                                                     <label class="control-label">feedback</label>
-                                                    
+
 						    <%= f.text_field :feedback, class: "form-control" %>
                                                 </div>
                                             </div>
-					   
-                                            
+
+
                                         </div>
                                  <%= f.submit("Add") %>
 <% end %>
-				
+
                                         <div class="clearfix"></div>
                                     </form>
                                 </div>
                             </div>
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
             <footer class="footer">
                 <div class="container-fluid">
-                    
+
                 </div>
             </footer>
         </div>

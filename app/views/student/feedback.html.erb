@@ -18,7 +18,7 @@
   <% end %>
 <%=form_for @feedback, url: {action: "feedback"} do |f| %>
                                     <form>
-                                        <div class="row">
+                                  <div hidden>      <div class="row">
                                             <div class="col-md-5">
                                                 <div class="form-group label-floating">
                                                     <label class="control-label">Student Id</label>
@@ -34,7 +34,7 @@
                                                 </div>
                                             </div>
 
-                                        </div>
+                                        </div></div>
 					<div class="row">
                                             <div class="col-md-5">
                                                 <div class="form-group label-floating">

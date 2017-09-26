@@ -366,7 +366,7 @@ private
   end
 
   def menu_params
-    params.require(:menu).permit(:day, :meal1, :meal2, :meal3)
+    params.require(:menu).permit(:day, :meal1, :meal2, :supper, :meal3)
   end
 
   def stock_params

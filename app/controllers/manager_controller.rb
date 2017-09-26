@@ -73,8 +73,12 @@ class ManagerController < ApplicationController
     end
     if request.post?
       @student = Student.find_by_roll_no(params[:student][:roll_no])
+      if !(@student)
+      flash[:notice] = "Invalid Roll No"
+      else
       @student.destroy
       flash[:notice] = "Successfully deleted '#{@student.name}'..."
+      end
       redirect_to(manager_delete_student_path)
     end
   end

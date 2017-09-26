@@ -1,8 +1,8 @@
 <div class="wrapper">
-       
-	<%= render 'ssidebar' %> 
+
+	<%= render 'ssidebar' %>
         <div class="main-panel">
-           <%= render 'snav' %> 
+           <%= render 'snav' %>
             <div class="content">
                 <div class="container-fluid">
                     <div class="row">
@@ -15,9 +15,9 @@
                                 <div class="card-content">
 
 <% if @totalbill != -1 %>
-<h1>Your total Bill so far is</h1>
-<p>Bill : Rs = <%= @totalbill %></p>
-<a href="https://www.onlinesbi.com/prelogin/icollecthome.htm">Pay at SBI collect</a>
+<h1>Your total Bill so far is Rs. <%= @totalbill %></h1>
+<!-- <p>Bill : Rs = <%= @totalbill %></p> -->
+<h3><a href="https://www.onlinesbi.com/prelogin/icollecthome.htm">Pay at SBI collect</a></h3>
 <% else %>
 <h1>You don't have any outstanding bill !</h1>
 <% end %>
@@ -25,13 +25,13 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
             <footer class="footer">
                 <div class="container-fluid">
-                    
+
                 </div>
             </footer>
         </div>

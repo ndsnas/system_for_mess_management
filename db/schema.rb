@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170923132450) do
+ActiveRecord::Schema.define(version: 20170926142909) do
 
   create_table "adminns", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string "admin"
@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(version: 20170923132450) do
     t.string "meal3"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "supper"
   end
 
   create_table "mess_cuts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
@@ -89,12 +90,13 @@ ActiveRecord::Schema.define(version: 20170923132450) do
     t.float "cost_per_unit", limit: 24
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "initquan", limit: 24
   end
 
   create_table "students", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string "roll_no"
     t.string "name"
-    t.integer "phone"
+    t.bigint "phone"
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

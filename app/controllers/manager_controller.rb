@@ -309,7 +309,10 @@ def add_stock
       # Calculating the total bill
       # Assuming base price = RS 80
         @total = @chargeable_days * 80 + @purchase_total_cost
-        @bill = Bill.create(:roll_no => f.roll_no, :amount => @total, :status => '0', :month => Date::MONTHNAMES.index(@joined_month))
+        @studentexist = Bill.where(roll_no: f.roll_no)
+        if @studentexist.empty?
+          @bill = Bill.create(:roll_no => f.roll_no, :amount => @total, :status => '0', :month => Date::MONTHNAMES.index(@joined_month))
+        end
     end
   
   

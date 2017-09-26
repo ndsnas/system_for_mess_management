@@ -42,6 +42,8 @@ Rails.application.routes.draw do
    get'manager/logout'
   get 'manager/update_menu'
   post 'manager/update_menu'
+  get 'manager/add_stock'
+  post 'manager/add_stock'
 resources :manager, :only => [:update_menu, :update_stock, :add_mess_cut, :update_mess_cut] do
   member do
     get :update_menu

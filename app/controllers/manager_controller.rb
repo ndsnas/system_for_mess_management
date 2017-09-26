@@ -107,6 +107,23 @@ def add_item
    end
   end 
 
+def add_stock
+
+    if ((session[:v] != 1) || !(session[:admin] || session[:password]))
+      redirect_to(manager_login_path)
+    end
+    if request.get?
+      @stocks = Stock.new
+    end
+    if request.post?
+      @stocks = Stock.new(stock_params)
+      if @stocks.save
+        flash[:notice] = "Successfully created..."
+        redirect_to(manager_add_stock_path)
+      end
+   end
+  end 
+
   def view_menu
     if ((session[:v] != 1) || !(session[:admin] || session[:password]))
       redirect_to(manager_login_path)
@@ -342,6 +359,10 @@ private
 
     params.require(:item).permit(:item_id, :item_name, :price)
 
+  end
+
+  def stocks_params
+    params.require(:stocks).permit(:stock_id, :stock_name, :quantity, :cost_per_unit, :initquan)
   end
 
   def menu_params

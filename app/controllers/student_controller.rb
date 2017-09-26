@@ -19,12 +19,15 @@ class StudentController < ApplicationController
 
       @logincred = Student.new(login_params)
     # @spassword = @logincred.password
-      @result = Student.where(roll_no: @logincred.roll_no, password: @logincred.password)
+      @result = Student.where(roll_no: @logincred.roll_no)
     # If roll number and password exist
       if !@result.empty?
-        session[:roll_no] = @logincred.roll_no
-        session[:password] = @logincred.password
-        redirect_to(student_dashboard_path)
+        @passdb = BCrypt::Password.new(@result[0].password)
+        if @passdb = @logincred.password
+          session[:roll_no] = @logincred.roll_no
+          session[:password] = @logincred.password
+          redirect_to(student_dashboard_path)          
+        end
       else
         @error = 1
       end

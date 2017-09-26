@@ -22,8 +22,7 @@
 <thead class="text-primary">
     <tr>
 
-      <th>Roll_no</th>
-      <th>Name</th>
+     
       <th>From</th>
       <th>To</th>
       <th>Status</th>
@@ -31,8 +30,6 @@
 </thead>
    <% @cuts.each do |cut| %>
     <tr>
-      <td><%= cut.roll_no %></td>
-      <td class="center"><%= cut.name %></td>
       <td class="center"><%= cut.from %></td>
       <td class="center"><%= cut.to %></td>
       <td class="center"><%= cut.status %></td>

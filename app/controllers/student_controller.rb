@@ -118,15 +118,20 @@ class StudentController < ApplicationController
     if request.post?
       @messcut = MessCut.new(messcut_params)
       if ((@messcut.roll_no) && (@messcut.name) && (@messcut.from) && (@messcut.to))
-      if @messcut.save
-        flash[:notice] = "Successfully submitted..."
-        redirect_to(student_apply_mess_cut_path)
+
+	@messcut = MessCut.where(:roll_no => session[:roll_no]).update(:from => @messcut.from, :to => @messcut.to)
+		
+	#@messcut.save
+
+     # if @messcut.save
+       flash[:notice] = "Successfully submitted..."
+       redirect_to(student_apply_mess_cut_path)
       end
     else
-      flash[:notice] = "One` or more fields empty!!!"
+     # flash[:notice] = "One or more fields empty!!!"
     end
 
-    end
+
   end
 
   def pay_bill
@@ -219,7 +224,7 @@ private
   end
 
   def messcut_params
-    params.require(:mess_cut).permit(:roll_no, :name, :from, :to)
+    params.require(:mess_cut).permit(:roll_no,:id, :name, :from, :to)
   end
 
   def changepass_params

@@ -19,7 +19,23 @@ ActiveRecord::Schema.define(version: 20170926142909) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+    t.string "admin"
+    t.string "password"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "bills", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+    t.string "roll_no"
+    t.float "amount", limit: 24
+    t.boolean "status"
+    t.integer "month"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "dues", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string "roll_no"
     t.float "amount", limit: 24
     t.boolean "status"
@@ -73,8 +89,9 @@ ActiveRecord::Schema.define(version: 20170926142909) do
     t.string "supper"
   end
 
-  create_table "mess_cuts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
-    t.string "roll_no"
+  create_table "mess_cuts", primary_key: ["id", "roll_no"], force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+    t.bigint "id", null: false
+    t.string "roll_no", null: false
     t.string "name"
     t.date "from"
     t.date "to"

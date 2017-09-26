@@ -172,7 +172,7 @@ def add_stock
     @cut = MessCut.find(params[:id])
     if request.patch?
       if  @cut.update_attributes(mess_cut_params)
-        flash[:notice] = "Successfully updated menu ... "
+        flash[:notice] = "Successfully updated mess cut ... "
         redirect_to(manager_add_mess_cut_path)
       end
     end

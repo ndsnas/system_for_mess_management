@@ -3,12 +3,12 @@ class StudentController < ApplicationController
 # Hackaround : Can we use direct variables here instead of using these class variables and all??
   def login
     if request.get?
-      
+
       if session[:roll_no] && session[:password]
-        @result = Student.where(roll_no: session[:roll_no] , password: session[:password])  
+        @result = Student.where(roll_no: session[:roll_no] , password: session[:password])
         if !@result.empty?
-         redirect_to(student_dashboard_path)  
-        end  
+         redirect_to(student_dashboard_path)
+        end
       end
 
       @logincred = Student.new
@@ -45,13 +45,15 @@ class StudentController < ApplicationController
 # Dashboard for student
   def dashboard
     if !(session[:roll_no] || session[:password])
-      redirect_to(student_login_path)  
+      redirect_to(student_login_path)
+
     end
+    @named = Student.where(roll_no: session[:roll_no]).pluck(:name)
   end
 
   def view_menu
     if !(session[:roll_no] || session[:password])
-      redirect_to(student_login_path)  
+      redirect_to(student_login_path)
     end
     @menus = Menu.all
     @extrasmenu = Item.all
@@ -59,7 +61,7 @@ class StudentController < ApplicationController
 
   def view_bill
     if !(session[:roll_no] || session[:password])
-      redirect_to(student_login_path) 
+      redirect_to(student_login_path)
     end
 # Get the number of days in the month in which the student joined
     @joined_date = Student.where(roll_no: session[:roll_no]).pluck(:created_at)[0]
@@ -91,7 +93,7 @@ class StudentController < ApplicationController
       end
     end
 # Calculating the total bill
-# Assuming base price = RS 80 
+# Assuming base price = RS 80
     @total = @chargeable_days * 80 + @purchase_total_cost
   end
 	def view_mess_cut
@@ -102,21 +104,23 @@ class StudentController < ApplicationController
 	      @cuts = MessCut.where(roll_no: session[:roll_no])
 	    end
 	end
-	
+
   def apply_mess_cut
     if !(session[:roll_no] || session[:password])
-      redirect_to(student_login_path)  
+      redirect_to(student_login_path)
     end
 
     if request.get?
       @messcut = MessCut.new
+      @name = Student.where(roll_no: session[:roll_no]).pluck(:name)
     end
-    
+
     if request.post?
       @messcut = MessCut.new(messcut_params)
-    if ((@messcut.roll_no) && (@messcut.name) && (@messcut.from) && (@messcut.to))
+      if ((@messcut.roll_no) && (@messcut.name) && (@messcut.from) && (@messcut.to))
       if @messcut.save
         flash[:notice] = "Successfully submitted..."
+        redirect_to(student_apply_mess_cut_path)
       end
     else
       flash[:notice] = "One` or more fields empty!!!"
@@ -127,7 +131,7 @@ class StudentController < ApplicationController
 
   def pay_bill
     if !(session[:roll_no] || session[:password])
-      redirect_to(student_login_path)  
+      redirect_to(student_login_path)
     end
       @currentbill = Bill.where(roll_no: session[:roll_no])
       @totalbill = 0
@@ -137,16 +141,16 @@ class StudentController < ApplicationController
         end
       else
         @totalbill = -1
-      end  
+      end
   end
 
   def purchase_history
     if !(session[:roll_no] || session[:password])
-      redirect_to(student_login_path)  
+      redirect_to(student_login_path)
     end
 # Replace this hardcoded value with the session variables rollnumber and name
     # @purchased = Extra.where(roll_no: 123).group('item').count('item')
-    @purchased = Extra.where(roll_no: session[:roll_no])    
+    @purchased = Extra.where(roll_no: session[:roll_no])
 
     @purchased1 = Extra.where(roll_no: session[:roll_no]).group('item').count('item')
     @purchase_total_cost1 = 0
@@ -161,7 +165,7 @@ class StudentController < ApplicationController
 
   def change_password
     if !(session[:roll_no] || session[:password])
-      redirect_to(student_login_path)  
+      redirect_to(student_login_path)
     end
 
     if request.get?
@@ -187,17 +191,19 @@ class StudentController < ApplicationController
 
   def feedback
     if !(session[:roll_no] || session[:password])
-      redirect_to(student_login_path)  
+      redirect_to(student_login_path)
     end
-    
+
     if request.get?
       @feedback = Feedback.new
+      @name1 = Student.where(roll_no: session[:roll_no]).pluck(:name)
     end
 
     if request.post?
       @feedback = Feedback.new(feedback_params)
       if @feedback.save
-        flash[:notice] = "Successfully created..."
+        flash[:notice] = "Successfully sent feedback!"
+        redirect_to(student_feedback_path)
       end
     end
   end
@@ -215,7 +221,7 @@ private
   def messcut_params
     params.require(:mess_cut).permit(:roll_no, :name, :from, :to)
   end
-  
+
   def changepass_params
     params.require(:student).permit(:email, :password)
   end

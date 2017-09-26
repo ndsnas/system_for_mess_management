@@ -1,6 +1,6 @@
 <div class="wrapper">
-       
-	<%= render 'msidebar' %> 
+
+	<%= render 'msidebar' %>
         <div class="main-panel">
            <%= render 'mnav' %>
           <div class="content">
@@ -32,7 +32,7 @@
                                         <tbody>
                                          <% @menus.each do |menu| %>
     <tr>
-      <td><%= menu.day %></td>
+      <td><b><%= menu.day %></b></td>
       <td class="center"><%= menu.meal1 %></td>
       <td class="center"><%= menu.meal2 %></td>
       <td class="center"><%= menu.supper %></td>
@@ -50,19 +50,14 @@
                                 </div>
                             </div>
                         </div>
-                       
+
                     </div>
                 </div>
             </div>
             <footer class="footer">
                 <div class="container-fluid">
-                    
+
                 </div>
             </footer>
         </div>
     </div>
-
-
-
-
-
